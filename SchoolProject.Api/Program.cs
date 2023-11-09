@@ -1,3 +1,6 @@
+using SchoolProject.Core;
+using SchoolProject.Service;
+using SchoolProject.Infrastructure;
 using SchoolProject.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,6 +12,12 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
+#region Dependency Injection
+builder.Services.AddInfrastructureDependencies()
+                .AddServiceDependencies().AddCoreDependencies();
+#endregion
 
 //Connection To SQL Server
 builder.Services.AddDbContext<ApplicationDBContext>(option =>

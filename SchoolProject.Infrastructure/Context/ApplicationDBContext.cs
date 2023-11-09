@@ -11,13 +11,12 @@ namespace SchoolProject.Infrastructure.Data
     public class ApplicationDBContext : DbContext
     {
         public ApplicationDBContext()
-        {
-            
+        {     
         }
 
-        public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options) : base(options)
+        public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options)
+        : base(options)
         {
-            
         }
 
         public DbSet<Student> students { get; set; }
@@ -25,6 +24,9 @@ namespace SchoolProject.Infrastructure.Data
         public DbSet<Subject> subjects { get; set; }
         public DbSet<StudentSubject> studentSubjects { get; set; }
         public DbSet<DepartmetSubject> departmetSubjects { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+            => optionsBuilder.UseSqlServer("Server=AMEEN-DESKTOP;Database=SchoolDB;integrated security=SSPI;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True");
 
     }
 }
