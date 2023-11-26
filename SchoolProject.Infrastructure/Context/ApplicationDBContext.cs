@@ -26,7 +26,7 @@ namespace SchoolProject.Infrastructure.Data
         public DbSet<DepartmetSubject> departmetSubjects { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-            => optionsBuilder.UseSqlServer("Server=AMEEN-DESKTOP;Database=SchoolDB;integrated security=SSPI;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True");
+            => optionsBuilder.UseSqlServer("Server=AMEEN-DESKTOP;Database=SchoolDB;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True");
 
     }
 }

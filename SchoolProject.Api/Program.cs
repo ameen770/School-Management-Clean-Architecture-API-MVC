@@ -20,6 +20,16 @@ builder.Services.AddInfrastructureDependencies()
                 .AddCoreDependencies();
 #endregion
 
+/*builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader();
+    });
+});*/
+
 //Connection To SQL Server
 builder.Services.AddDbContext<ApplicationDBContext>(option =>
 {
