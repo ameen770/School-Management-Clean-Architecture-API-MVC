@@ -20,15 +20,19 @@ builder.Services.AddInfrastructureDependencies()
                 .AddCoreDependencies();
 #endregion
 
-/*builder.Services.AddCors(options =>
+///
+builder.Services.AddCors(options =>
 {
-    options.AddDefaultPolicy(builder =>
-    {
-        builder.AllowAnyOrigin()
-               .AllowAnyMethod()
-               .AllowAnyHeader();
-    });
-});*/
+    options.AddPolicy("AllowSpecificOrigin",
+            builder =>
+            {
+                builder.WithOrigins("http://localhost:4200")
+                       .AllowAnyHeader()
+                       .AllowAnyMethod();
+            });
+});
+///
+
 
 //Connection To SQL Server
 builder.Services.AddDbContext<ApplicationDBContext>(option =>
@@ -37,6 +41,11 @@ builder.Services.AddDbContext<ApplicationDBContext>(option =>
 });
 
 var app = builder.Build();
+
+///
+app.UseCors("AllowSpecificOrigin");
+///
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
