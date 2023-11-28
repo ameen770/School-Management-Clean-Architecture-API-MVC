@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
-using SchoolProject.Core.Features.Students.Queries.Models;
-using SchoolProject.Core.Features.Students.Queries.Results;
+using SchoolProject.Application.Features.Students.Queries.Models;
+using SchoolProject.Application.Features.Students.Queries.Results;
 using SchoolProject.Data.Entities;
 using SchoolProject.Service.Abstracts;
 using System;
@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolProject.Core.Features.Students.Queries.Handlers
+namespace SchoolProject.Application.Features.Students.Queries.Handlers
 {
     public class StudentHandler : IRequestHandler<GetStudentListQuery, List<GetStudentListResponse>>
     {

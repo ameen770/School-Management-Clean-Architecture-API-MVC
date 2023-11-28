@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolProject.Core
+namespace SchoolProject.Application
 {
     public static class ModuleCoreDependencies
     {

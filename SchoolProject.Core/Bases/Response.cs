@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolProject.Core.Bases
+namespace SchoolProject.Application.Bases
 {
     public class Response
     {

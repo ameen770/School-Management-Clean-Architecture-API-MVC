@@ -6,11 +6,11 @@ using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using SchoolProject.Core.Features.Students.Queries.Models;
+using SchoolProject.Application.Features.Students.Queries.Models;
 using SchoolProject.Data.Entities;
 using SchoolProject.Infrastructure.Data;
 
-namespace SchoolProject.Api.Controllers
+namespace SchoolProject.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

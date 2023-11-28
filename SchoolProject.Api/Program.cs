@@ -1,4 +1,4 @@
-using SchoolProject.Core;
+using SchoolProject.Application;
 using SchoolProject.Service;
 using SchoolProject.Infrastructure;
 using SchoolProject.Infrastructure.Data;

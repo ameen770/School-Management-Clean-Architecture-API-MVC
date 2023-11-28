@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolProject.Api", "SchoolProject.Api\SchoolProject.Api.csproj", "{8DC3959A-91C6-42F0-98E0-FA90492BC580}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolProject.WebAPI", "SchoolProject.Api\SchoolProject.WebAPI.csproj", "{8DC3959A-91C6-42F0-98E0-FA90492BC580}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolProject.Data", "SchoolProject.Data\SchoolProject.Data.csproj", "{F8AA811A-F676-4045-868E-CAE2D695FC26}"
 EndProject
@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolProject.Infrastructur
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolProject.Service", "SchoolProject.Service\SchoolProject.Service.csproj", "{340FBAAA-20F8-4CD4-920D-3E7ACA3F6D7D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolProject.Core", "SchoolProject.Core\SchoolProject.Core.csproj", "{EE6256ED-C623-433C-8D6A-6CC25C544676}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolProject.Application", "SchoolProject.Core\SchoolProject.Application.csproj", "{EE6256ED-C623-433C-8D6A-6CC25C544676}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolProject.WebUI", "SchoolProject.WebUI\SchoolProject.WebUI.csproj", "{CDB20412-B71C-4B96-9347-BC1B1DC1866A}"
 EndProject

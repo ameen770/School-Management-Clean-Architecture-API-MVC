@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolProject.Core.Features.Students.Queries.Results
+namespace SchoolProject.Application.Features.Students.Queries.Results
 {
     public class GetStudentListResponse
     {
