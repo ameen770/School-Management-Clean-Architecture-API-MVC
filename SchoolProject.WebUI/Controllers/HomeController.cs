@@ -13,7 +13,7 @@ public class HomeController : Controller
     public HomeController()
     {
         httpClient = new HttpClient();
-        httpClient.BaseAddress = new Uri("https://localhost:7136/Student/List"); // Replace with your Web API base URL
+        httpClient.BaseAddress = new Uri(BaseURL); // Replace with your Web API base URL
     }
 
     public async Task<ActionResult> Index()
