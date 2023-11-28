@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using SchoolProject.Application.Bases;
 using SchoolProject.Application.Features.Students.Queries.Results;
 using SchoolProject.Data.Entities;
 using System;
