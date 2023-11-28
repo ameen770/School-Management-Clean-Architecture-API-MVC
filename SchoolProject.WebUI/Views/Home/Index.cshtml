@@ -1,0 +1,32 @@
+﻿@model List<SchoolProject.WebUI.Models.Student>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<h2>Student List</h2>
+
+<table>
+    <tr>
+        <th>StudID</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>DepartmentName</th>
+    </tr>
+    @foreach (var student in Model)
+    {
+        <tr>
+            <td>@student.StudID</td>
+            <td>@student.Name</td>
+            <td>@student.Address</td>
+            <td>@student.DepartmentName</td>
+        </tr>
+    }
+</table>
+
+
+@*<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>*@

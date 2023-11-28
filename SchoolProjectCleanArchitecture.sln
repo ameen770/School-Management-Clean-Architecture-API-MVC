@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolProject.Api", "SchoolProject.Api\SchoolProject.Api.csproj", "{8DC3959A-91C6-42F0-98E0-FA90492BC580}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolProject.Api", "SchoolProject.Api\SchoolProject.Api.csproj", "{8DC3959A-91C6-42F0-98E0-FA90492BC580}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolProject.Data", "SchoolProject.Data\SchoolProject.Data.csproj", "{F8AA811A-F676-4045-868E-CAE2D695FC26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolProject.Data", "SchoolProject.Data\SchoolProject.Data.csproj", "{F8AA811A-F676-4045-868E-CAE2D695FC26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolProject.Infrastructure", "SchoolProject.Infrastructure\SchoolProject.Infrastructure.csproj", "{FE8D652D-7154-490D-BA82-E8ED1CEB2FB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolProject.Infrastructure", "SchoolProject.Infrastructure\SchoolProject.Infrastructure.csproj", "{FE8D652D-7154-490D-BA82-E8ED1CEB2FB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolProject.Service", "SchoolProject.Service\SchoolProject.Service.csproj", "{340FBAAA-20F8-4CD4-920D-3E7ACA3F6D7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolProject.Service", "SchoolProject.Service\SchoolProject.Service.csproj", "{340FBAAA-20F8-4CD4-920D-3E7ACA3F6D7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolProject.Core", "SchoolProject.Core\SchoolProject.Core.csproj", "{EE6256ED-C623-433C-8D6A-6CC25C544676}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolProject.Core", "SchoolProject.Core\SchoolProject.Core.csproj", "{EE6256ED-C623-433C-8D6A-6CC25C544676}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolProject.WebUI", "SchoolProject.WebUI\SchoolProject.WebUI.csproj", "{CDB20412-B71C-4B96-9347-BC1B1DC1866A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{EE6256ED-C623-433C-8D6A-6CC25C544676}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE6256ED-C623-433C-8D6A-6CC25C544676}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE6256ED-C623-433C-8D6A-6CC25C544676}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDB20412-B71C-4B96-9347-BC1B1DC1866A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDB20412-B71C-4B96-9347-BC1B1DC1866A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDB20412-B71C-4B96-9347-BC1B1DC1866A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDB20412-B71C-4B96-9347-BC1B1DC1866A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
