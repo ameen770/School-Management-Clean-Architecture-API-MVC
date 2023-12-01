@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OData.Query;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using SchoolProject.Application.Features.Students.Queries.Models;
+using SchoolProject.Application.Features.Students.Queries.Results;
 using SchoolProject.Data.Entities;
 using SchoolProject.Infrastructure.Data;
 
@@ -23,13 +22,39 @@ namespace SchoolProject.WebAPI.Controllers
             _mediator = mediator;
         }
 
-        // GET: api/Student/List
+        // GET /api/Student/List?$orderby=Name
         [HttpGet("/Student/List")]
+        [EnableQuery]
         public async Task<IActionResult> GetStudentList()
         {
             var response = await _mediator.Send(new GetStudentListQuery());
             return Ok(response);
         }
+
+        /*// GET /api/Students?$orderby=Name
+        [HttpGet]
+        [EnableQuery]
+        public async Task<IActionResult> GetStudentList([FromQuery(Name = "$orderby")] string orderby)
+        {
+            var response = await _mediator.Send(request: new GetStudentListQuery { OrderBy = orderby });
+            return Ok(response);
+        }*/
+
+
+        // ==================================================
+
+
+        /*// GET: api/Students
+        [HttpGet]
+        [EnableQuery]
+        public async Task<IActionResult> GetStudentList(ODataQueryOptions<SelectSome_1OfGetStudentListResponse> options)
+        {
+            var query = new GetStudentListQuery();
+            var result = await _mediator.Send(query);
+            var queryableResult = result.AsQueryable(); // Convert the List to IQueryable
+            var pagedResult = options.ApplyTo(queryableResult);
+            return Ok(pagedResult);
+        }*/
 
         /*// GET: api/Students
         [HttpGet]

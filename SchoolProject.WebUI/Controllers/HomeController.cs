@@ -22,7 +22,6 @@ public class HomeController : Controller
     public async Task<ActionResult> Index()
     {
         List<Student> students = new List<Student>();
-
         try
         {
             HttpResponseMessage response = await httpClient.GetAsync(BaseURL); // Replace with your Web API endpoint URL
@@ -32,6 +31,7 @@ public class HomeController : Controller
                 string responseContent = await response.Content.ReadAsStringAsync();
                 students = JsonConvert.DeserializeObject<List<Student>>(responseContent);
             }
+
             else
             {
                 // Handle the error response
@@ -39,7 +39,7 @@ public class HomeController : Controller
                 // response.StatusCode and response.ReasonPhrase provide additional information
             }
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             // Handle the exception
         }
