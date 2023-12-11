@@ -11,7 +11,8 @@ public class HomeController : Controller
 {
     private readonly HttpClient httpClient;
     //HttpClient _client = new HttpClient();
-    private string BaseURL = "https://localhost:7136/Student/List";
+    //private string BaseURL = "https://localhost:7136/Student/List";
+    private string BaseURL = "https://localhost:7136/api/Students";
 
     public HomeController()
     {
@@ -29,19 +30,46 @@ public class HomeController : Controller
             if (response.IsSuccessStatusCode)
             {
                 string responseContent = await response.Content.ReadAsStringAsync();
+                // students = JsonConvert.DeserializeObject<List<Student>>(responseContent);
+                ResponseData responseData = JsonConvert.DeserializeObject<ResponseData>(responseContent);
+                students = responseData.Data;
+                return View(students);
+            }
+
+            else
+            {
+                return NotFound();
+            }
+        }
+        catch (Exception)
+        {
+            return NotFound();
+        }
+
+        //return View(students);
+    }
+    
+    public async Task<ActionResult> GetStudentById(int id)
+    {
+        List<Student> students = new List<Student>();
+        try
+        {
+            HttpResponseMessage response = await httpClient.GetAsync(BaseURL); // Replace with your Web API endpoint URL
+
+            if (response.IsSuccessStatusCode)
+            {
+                string responseContent = await response.Content.ReadAsStringAsync();
                 students = JsonConvert.DeserializeObject<List<Student>>(responseContent);
             }
 
             else
             {
-                // Handle the error response
-                // For example, you can log the error or display an error message
-                // response.StatusCode and response.ReasonPhrase provide additional information
+                return NotFound();
             }
         }
         catch (Exception)
         {
-            // Handle the exception
+            return NotFound();
         }
 
         return View(students);

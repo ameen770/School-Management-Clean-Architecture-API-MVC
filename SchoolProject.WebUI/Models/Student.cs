@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SchoolProject.WebUI.Models
 {
+    //[JsonObject]
     public class Student
     {
         [JsonProperty("studID")]

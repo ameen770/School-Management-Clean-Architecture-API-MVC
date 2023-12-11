@@ -1,7 +1,7 @@
 using SchoolProject.Application;
 using SchoolProject.Service;
 using SchoolProject.Infrastructure;
-using SchoolProject.Infrastructure.Data;
+using SchoolProject.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.OData;
 
@@ -29,6 +29,7 @@ builder.Services.AddCors(options =>
             builder =>
             {
                 builder.WithOrigins("http://localhost:4200")
+                //builder.WithOrigins("http://localhost:7155")
                        .AllowAnyHeader()
                        .AllowAnyMethod();
             });

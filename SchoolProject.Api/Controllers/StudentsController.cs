@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using SchoolProject.Application.Features.Students.Queries.Models;
 using SchoolProject.Application.Features.Students.Queries.Results;
 using SchoolProject.Data.Entities;
-using SchoolProject.Infrastructure.Data;
+using SchoolProject.Infrastructure.Context;
 
 namespace SchoolProject.WebAPI.Controllers
 {
@@ -23,23 +23,23 @@ namespace SchoolProject.WebAPI.Controllers
         }
 
         // GET /api/Student/List?$orderby=Name
-        [HttpGet("/Student/List")]
+        //[HttpGet("/Student/List")]
+        [HttpGet]
         [EnableQuery]
         public async Task<IActionResult> GetStudentList()
         {
             var response = await _mediator.Send(new GetStudentListQuery());
             return Ok(response);
         }
-
-        /*// GET /api/Students?$orderby=Name
-        [HttpGet]
+        
+        // GET /api/Student/List/5
+        [HttpGet("/Student/{id}")]
         [EnableQuery]
-        public async Task<IActionResult> GetStudentList([FromQuery(Name = "$orderby")] string orderby)
+        public async Task<IActionResult> GetStudentList([FromRoute] int id)
         {
-            var response = await _mediator.Send(request: new GetStudentListQuery { OrderBy = orderby });
+            var response = await _mediator.Send(new GetStudentByIdQuery(id));
             return Ok(response);
-        }*/
-
+        }
 
         // ==================================================
 

@@ -14,7 +14,9 @@ using System.Threading.Tasks;
 
 namespace SchoolProject.Application.Features.Students.Queries.Handlers
 {
-    public class StudentHandler : IRequestHandler<GetStudentListQuery, List<GetStudentListResponse>>
+    public class StudentQueryHandler : ResponseHandler, 
+        IRequestHandler<GetStudentListQuery, Response<List<GetStudentListResponse>>>,
+        IRequestHandler<GetStudentByIdQuery, Response<GitSingleStudentResponse>>
     {
         #region Fields
         private readonly IStudentService _studentService;
@@ -23,7 +25,7 @@ namespace SchoolProject.Application.Features.Students.Queries.Handlers
 
 
         #region Constractors
-        public StudentHandler(IStudentService studentService, IMapper mapper)
+        public StudentQueryHandler(IStudentService studentService, IMapper mapper)
         {
             _studentService = studentService;
             _mapper = mapper;
@@ -31,11 +33,19 @@ namespace SchoolProject.Application.Features.Students.Queries.Handlers
         #endregion
 
         #region Handles Functions
-        public async Task<List<GetStudentListResponse>> Handle(GetStudentListQuery request, CancellationToken cancellationToken)
+        public async Task<Response<List<GetStudentListResponse>>> Handle(GetStudentListQuery request, CancellationToken cancellationToken)
         {
             var studentList = await _studentService.GetStudentsListAsync();
             var studentListMapper = _mapper.Map<List<GetStudentListResponse>>(studentList);
-            return studentListMapper;
+            return Success(studentListMapper);
+        }
+
+        public async Task<Response<GitSingleStudentResponse>> Handle(GetStudentByIdQuery request, CancellationToken cancellationToken)
+        {
+            var student = await _studentService.GetStudentByIdAsync(request.Id);
+            if (student == null) return NotFound<GitSingleStudentResponse>("Student Not Found");
+            var result = _mapper.Map<GitSingleStudentResponse>(student);
+            return Success(result);
         }
         #endregion
     }
