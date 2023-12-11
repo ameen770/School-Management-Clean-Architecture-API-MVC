@@ -8,10 +8,11 @@ using SchoolProject.Application.Features.Students.Queries.Models;
 using SchoolProject.Application.Features.Students.Queries.Results;
 using SchoolProject.Data.Entities;
 using SchoolProject.Infrastructure.Context;
+using SchoolProject.Data.AppMetaData;
 
 namespace SchoolProject.WebAPI.Controllers
 {
-    [Route("api/[controller]")]
+    //[Route("api/[controller]")]
     [ApiController]
     public class StudentsController : ControllerBase
     {
@@ -24,7 +25,7 @@ namespace SchoolProject.WebAPI.Controllers
 
         // GET /api/Student/List?$orderby=Name
         //[HttpGet("/Student/List")]
-        [HttpGet]
+        [HttpGet(Router.StudentRouting.List)]
         [EnableQuery]
         public async Task<IActionResult> GetStudentList()
         {
@@ -33,7 +34,8 @@ namespace SchoolProject.WebAPI.Controllers
         }
         
         // GET /api/Student/List/5
-        [HttpGet("/Student/{id}")]
+        //[HttpGet("/Student/{id}")]
+        [HttpGet(Router.StudentRouting.GetByID)]
         [EnableQuery]
         public async Task<IActionResult> GetStudentList([FromRoute] int id)
         {
