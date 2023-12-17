@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolProject.Service", "Sc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolProject.Application", "SchoolProject.Core\SchoolProject.Application.csproj", "{EE6256ED-C623-433C-8D6A-6CC25C544676}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolProject.WebUI", "SchoolProject.WebUI\SchoolProject.WebUI.csproj", "{CDB20412-B71C-4B96-9347-BC1B1DC1866A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolProject.WebUI", "SchoolProject.WebUI\SchoolProject.WebUI.csproj", "{CDB20412-B71C-4B96-9347-BC1B1DC1866A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolProject.XUnitTest", "SchoolProject.XUnitTest\SchoolProject.XUnitTest.csproj", "{3769A258-7ECF-4DAB-9AF4-895ED42B740A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{CDB20412-B71C-4B96-9347-BC1B1DC1866A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDB20412-B71C-4B96-9347-BC1B1DC1866A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDB20412-B71C-4B96-9347-BC1B1DC1866A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3769A258-7ECF-4DAB-9AF4-895ED42B740A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3769A258-7ECF-4DAB-9AF4-895ED42B740A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3769A258-7ECF-4DAB-9AF4-895ED42B740A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3769A258-7ECF-4DAB-9AF4-895ED42B740A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
