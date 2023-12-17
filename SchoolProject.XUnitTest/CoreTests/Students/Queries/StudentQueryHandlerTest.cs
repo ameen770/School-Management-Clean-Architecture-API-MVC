@@ -13,6 +13,7 @@ using SchoolProject.Data.Entities;
 using SchoolProject.Service.Abstracts;
 using SchoolProject.XUnitTest.TestModels;
 using System.Net;
+
 [assembly: CollectionBehavior(CollectionBehavior.CollectionPerClass, MaxParallelThreads = 6)]
 namespace SchoolProject.XUnitTest.CoreTests.Students.Queries
 {
