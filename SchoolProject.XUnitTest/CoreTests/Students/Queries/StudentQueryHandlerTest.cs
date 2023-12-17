@@ -34,6 +34,7 @@ namespace SchoolProject.XUnitTest.CoreTests.Students.Queries
             var configuration = new MapperConfiguration(c => c.AddProfile(_studentProfile));
             _mapperMock=new Mapper(configuration);
         }
+
         [Fact]
         public async Task Handle_StudentList_Should_NotNull_And_NotEmpty()
         {
